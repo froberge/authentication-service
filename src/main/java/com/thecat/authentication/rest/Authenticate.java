@@ -1,4 +1,4 @@
-package com.thecat.authentication.service.endpoint;
+package com.thecat.authentication.rest;
 
 import javax.inject.Inject;
 import javax.ws.rs.GET;
