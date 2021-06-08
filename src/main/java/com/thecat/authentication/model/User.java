@@ -2,25 +2,25 @@ package com.thecat.authentication.model;
 
 
 public class User {
-    private String username;
+    private String name;
 	private String password;
-	private String emailAdr;
+	private String email;
 	private String gender;
 	private String age;
 
 	
     /**
-	 * @return the username
+	 * @return the name
 	 */
-	public String getUsername() {
-		return username;
+	public String getName() {
+		return name;
 	}
 
 	/**
 	 * @param username the username to set
 	 */
-	public void setUsername(String username) {
-		this.username = username;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	/**
@@ -38,20 +38,20 @@ public class User {
 	}
 
 	/**
-	 * @return the emailAdr
+	 * @return the email
 	 */
-	public String getEmailAdr() {
-		return emailAdr;
+	public String getEmail() {
+		return email;
 	}
 
 	/**
-	 * @param emailAdr the emailAdr to set
+	 * @param email the email to set
 	 */
-	public void setEmailAdr(String emailAdr) {
-		this.emailAdr = emailAdr;
+	public void setEmailAdr(String email) {
+		this.email = email;
 	}
 
-	/**
+	/** 
 	 * @return the gender
 	 */
 	public String getGender() {
@@ -83,10 +83,11 @@ public class User {
     	
     	StringBuffer sb = new StringBuffer( "Information on the user: \n" );
     	
-    	sb.append("name [ " + this.username + "]\n");
+    	sb.append("name [ " + this.name + "]\n");
     	sb.append("gender [ " + this.gender + "]\n");
     	sb.append("birthDate [ " + this.age + "]\n");
-    	sb.append("email [ " + this.emailAdr + "]\n");
+    	sb.append("email [ " + this.email + "]\n");
+		sb.append("password [ " + this.password + "]\n");
     	
     	return sb.toString();
      }

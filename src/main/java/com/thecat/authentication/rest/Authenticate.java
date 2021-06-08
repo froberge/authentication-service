@@ -6,20 +6,38 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response.Status;
 
-import com.thecat.authentication.service.AuthenticationService;
+import org.eclipse.microprofile.rest.client.inject.RestClient;
+
 import com.thecat.authentication.model.User;
+import com.thecat.authentication.rest.client.UserService;
 
 @Path("/authenticate")
 public class Authenticate {
 
     @Inject
-    private AuthenticationService service;
+    @RestClient
+    private UserService service;
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     public String login(User user ) {
-     return service.login(user);
+
+        int statusCode = service.login(user);
+    
+        String message;
+
+        if ( statusCode == Status.OK.getStatusCode() )
+            message =  "SUCCESS";
+        else if ( statusCode == Status.NO_CONTENT.getStatusCode() )
+            message = "NOT_FOUND";
+        else if ( statusCode == Status.PARTIAL_CONTENT.getStatusCode() )
+            message = "WRONG_CREDENTIAL";
+        else
+            message = "SERVICE_NOT_FOUND";
+
+        return message;
     }
 
     @GET
