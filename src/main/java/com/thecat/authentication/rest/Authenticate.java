@@ -35,12 +35,8 @@ public class Authenticate {
         String message;
         if ( statusCode == Status.OK.getStatusCode() )
             message =  "SUCCESS";
-        else if ( statusCode == Status.NO_CONTENT.getStatusCode() )
-            message = "NOT_FOUND";
-        else if ( statusCode == Status.PARTIAL_CONTENT.getStatusCode() )
-            message = "WRONG_CREDENTIAL";
         else
-            message = "SERVICE_NOT_FOUND";
+            message = "WRONG_CREDENTIAL";
 
         return message;
     }
