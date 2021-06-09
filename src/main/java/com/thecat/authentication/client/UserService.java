@@ -1,4 +1,4 @@
-package com.thecat.authentication.rest.client;
+package com.thecat.authentication.client;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
