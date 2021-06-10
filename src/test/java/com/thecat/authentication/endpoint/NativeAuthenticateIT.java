@@ -1,4 +1,4 @@
-package com.thecat.authentication.service.endpoint;
+package com.thecat.authentication.endpoint;
 
 import io.quarkus.test.junit.NativeImageTest;
 

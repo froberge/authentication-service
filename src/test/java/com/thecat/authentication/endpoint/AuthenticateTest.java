@@ -1,4 +1,4 @@
-package com.thecat.authentication.service.endpoint;
+package com.thecat.authentication.endpoint;
 
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Test;
@@ -15,7 +15,7 @@ public class AuthenticateTest {
           .when().get("/authenticate/health")
           .then()
              .statusCode(200)
-             .body(is("SUCCESS"));
+             .body(is("200"));
     }
 
 }
