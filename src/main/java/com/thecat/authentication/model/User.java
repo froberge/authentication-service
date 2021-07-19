@@ -47,7 +47,7 @@ public class User {
 	/**
 	 * @param email the email to set
 	 */
-	public void setEmailAdr(String email) {
+	public void setEmail(String email) {
 		this.email = email;
 	}
 
