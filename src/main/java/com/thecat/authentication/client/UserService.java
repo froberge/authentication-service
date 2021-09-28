@@ -14,7 +14,6 @@ import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 public interface UserService {
     
     @POST
-    @Path( "/login")
     @Consumes( MediaType.APPLICATION_JSON)
     public int login( User user );
 }
